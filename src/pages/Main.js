@@ -1,19 +1,20 @@
 import React, { Component } from 'react'
+import { observer } from 'mobx-react'
+import MainStore from '@/store/mainStore'
 
+@observer
 class Main extends Component {
-  constructor () {
-    super()
-    this.state = {
-      title: '首页'
-    }
-  }
-
   render () {
     return (
       <div className='main-page'>
-        {this.state.title}
+        {MainStore.state.title}
+        <button onClick={this.changeTitle}>点击</button>
       </div>
     )
+  }
+
+  changeTitle () {
+    MainStore.setTitle({ title: '测试' })
   }
 }
 

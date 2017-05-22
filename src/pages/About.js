@@ -11,7 +11,7 @@ class About extends Component {
   render () {
     return (
       <div className='about-page'>
-        {this.state.title}
+        关于
       </div>
     )
   }
