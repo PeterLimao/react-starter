@@ -11,7 +11,7 @@ Config.output.filename = '[name].[hash:7].js'
 Config.output.chunkFilename = '[name].[hash:7].js'
 Config.module.rules.forEach((loader) => {
   if (loader.use[0].loader === 'url') {
-    loader.use[0].options.query.name = '[name].[hash:7].[ext]'
+    loader.use[0].options.name = '[name].[hash:7].[ext]'
   }
 })
 

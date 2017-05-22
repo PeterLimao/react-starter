@@ -35,10 +35,8 @@ module.exports = {
           {
             loader: 'url',
             options: {
-              query: {
-                limit: 10000,
-                name: 'img/[name].[hash:7].[ext]'
-              }
+              limit: 10000,
+              name: 'img/[name].[hash:7].[ext]'
             }
           }
         ]
@@ -65,10 +63,8 @@ module.exports = {
           {
             loader: 'url',
             options: {
-              query: {
-                limit: 10000,
-                name: 'font/[name].[hash:7].[ext]'
-              }
+              limit: 10000,
+              name: 'font/[name].[hash:7].[ext]'
             }
           }
         ]
