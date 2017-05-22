@@ -5,10 +5,11 @@ const Webpack = require('webpack')
 
 module.exports = {
   entry: {
-    app: ['./src/index.js'],
+    app: ['./src/app.js'],
     vendor: [
       'react',
       'react-dom',
+      'react-router',
       'axios'
     ]
   },

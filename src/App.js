@@ -1,14 +1,14 @@
-import React, { Component } from 'react'
-import Header from '@/components/Header'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { HashRouter as Router } from 'react-router-dom'
+import { routes, RouteWithSubRoutes } from '@/routes'
 
-class App extends Component {
-  render () {
-    return (
-      <div className='app'>
-        <Header />
-      </div>
-    )
-  }
-}
-
-export default App
+ReactDOM.render(
+  <Router>
+    <div>
+      {routes.map((route, i) => (
+        <RouteWithSubRoutes key={i} {...route} />
+      ))}
+    </div>
+  </Router>,
+  document.getElementById('root'))
