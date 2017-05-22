@@ -2,6 +2,7 @@ const Webpack = require('webpack')
 const ProgressPlugin = require('webpack/lib/ProgressPlugin')
 const Config = require('./webpack.base.config')
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 Config.output.publicPath = '/'
 
@@ -9,6 +10,7 @@ Config.plugins = (Config.plugins || []).concat([
   new ExtractTextWebpackPlugin({
     filename: 'style/[name].[hash:7].css'
   }),
+  new BundleAnalyzerPlugin(),
   new Webpack.DefinePlugin({
     'process.env': {
       NODE_ENV: '"production"'

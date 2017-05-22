@@ -5,13 +5,7 @@ const Webpack = require('webpack')
 
 module.exports = {
   entry: {
-    app: ['./src/app.js'],
-    vendor: [
-      'react',
-      'react-dom',
-      'react-router',
-      'axios'
-    ]
+    app: ['./src/app.js']
   },
   output: {
     path: Path.join(__dirname, '../dist'),
@@ -82,8 +76,14 @@ module.exports = {
   },
   plugins: [
     new Webpack.optimize.CommonsChunkPlugin({
-      names: ['vendor'],
-      minChunks: 2
+      name: 'vendor',
+      minChunks ({ resource }) {
+        return (
+          resource &&
+          resource.indexOf('node_modules') >= 0 &&
+          resource.match(/\.js$/)
+        )
+      }
     }),
     new HtmlWebpackPlugin({
       filename: 'app.html',
