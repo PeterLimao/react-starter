@@ -7,7 +7,7 @@ class Main extends Component {
   render () {
     return (
       <div className='main-page'>
-        {MainStore.state.title}
+        {MainStore.title}
         <button onClick={this.changeTitle}>点击</button>
       </div>
     )

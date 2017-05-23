@@ -1,12 +1,15 @@
 import { observable, action } from 'mobx'
 
 class MainStore {
-  @observable state = {
-    title: '首页'
+  @observable title
+
+  constructor () {
+    this.title = '首页'
   }
 
-  @action setTitle ({ title }) {
-    this.state.title = title
+  @action
+  setTitle ({ title }) {
+    this.title = title
   }
 }
 
